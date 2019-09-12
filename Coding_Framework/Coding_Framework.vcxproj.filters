@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source\app">
+      <UniqueIdentifier>{3ed8c7ab-2f66-409b-8e52-fe88bb0401cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\inc">
+      <UniqueIdentifier>{23d882f7-5230-45ec-968c-ae8129a25b24}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="coding_framework.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="app_fw.cpp">
+      <Filter>Source\app</Filter>
+    </ClCompile>
+    <ClCompile Include="app_mvc.cpp">
+      <Filter>Source\app</Filter>
+    </ClCompile>
+    <ClCompile Include="app_ui.cpp">
+      <Filter>Source\app</Filter>
+    </ClCompile>
+    <ClCompile Include="app_var.cpp">
+      <Filter>Source\app</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="coding_framework.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="coding_framework.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Coding_Framework.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc_gnc.h">
+      <Filter>Source\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc_std.h">
+      <Filter>Source\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc_stl.h">
+      <Filter>Source\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="app_var.h">
+      <Filter>Source\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app_fw.h">
+      <Filter>Source\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app_mvc.h">
+      <Filter>Source\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app_ui.h">
+      <Filter>Source\app</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="coding_framework.h">
+      <Filter>Source</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>
