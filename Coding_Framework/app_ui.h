@@ -295,6 +295,9 @@ public:
 		 *
 		 */
 
+		menuItemIfce_t(void){}
+		virtual ~menuItemIfce_t(void) {}
+
 		virtual void installSlotFunction(slotFunction_t _func) final { slotFunc = _func; }
 		virtual void uninstallSlotFunction(void) final { slotFunc = NULL; }
 		virtual void slotCall(message_t _msg) final
