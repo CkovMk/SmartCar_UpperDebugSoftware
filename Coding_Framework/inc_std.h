@@ -20,13 +20,13 @@
 #include "setjmp.h"
 #include "signal.h"
 #include "stdarg.h"
-#include "stdbool.h"
+//#include "stdbool.h"	//deprecated in C++17
 #include "stddef.h"
 #include "stdint.h"
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
-#include "tgmath.h"
+//#include "tgmath.h"	//deprecated in C++17
 #include "time.h"
 //#include "uchar.h"
 #include "wchar.h"

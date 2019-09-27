@@ -10,13 +10,12 @@
 //C++ Other
 #include "iostream"
 #include "algorithm"
-//#include "bitset"
+#include "bitset"
 //#include "chrono"
 //#include "codecvt"
-//#include "complex"
+#include "complex"
 #include "exception"
 #include "functional"
-//#include "initalizer_list"
 #include "limits"
 //#include "locale"		//not supported.
 #include "memory"
