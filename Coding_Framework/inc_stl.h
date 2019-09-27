@@ -17,7 +17,7 @@
 #include "exception"
 #include "functional"
 #include "limits"
-//#include "locale"		//not supported.
+//#include "locale"		//not supported. 
 #include "memory"
 #include "new"
 #include "numeric"
