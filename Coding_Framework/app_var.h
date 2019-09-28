@@ -25,6 +25,7 @@ enum class appVar_keyBTOp_t : int32_t
 
 };
 
+
 enum class appVar_keySWOp_t : int32_t
 {
 	nop,
@@ -63,13 +64,6 @@ struct appVar_camData_t
 
 /**************** Data Collection ****************/
 
-struct appVar_data_t
-{
-	appVar_imuData_t imu;
-	appVar_magData_t mag;
-	appVar_camData_t cam;
-	appVar_keyData_t key;
-};
 
 
 /**************** Flag Implements ****************/
@@ -105,11 +99,7 @@ struct appVar_excpFlag
 
 /**************** Flag Collection ****************/
 
-struct appVar_flag_t
-{
-	appVar_runModeFlag_t rMode;
-	appVar_excpFlag excp;
-};
+
 
 
 
@@ -122,9 +112,6 @@ public:
 		static appVar_t var;
 		return var;
 	}
-
-	appVar_data_t data;
-	appVar_flag_t flag;
 
 private:
 	appVar_t(void)
