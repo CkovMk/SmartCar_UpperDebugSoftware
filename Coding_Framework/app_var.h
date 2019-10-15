@@ -113,6 +113,9 @@ public:
 		return var;
 	}
 
+	appVar_keyBTOp_t BTOp;
+	appVar_keySWOp_t SWOp;
+
 private:
 	appVar_t(void)
 	{

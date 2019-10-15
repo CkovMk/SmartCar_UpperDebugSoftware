@@ -73,72 +73,72 @@ void Coding_Framework::func_updateImageIptDisp(gnc_rgbIptImg_t* _buf)
 
 void Coding_Framework::on_KEY_UP_clicked(void)
 {
-	var.data.key.BTOp = appVar_keyBTOp_t::sup;
-	uiMenu.keyOp(&var.data.key.BTOp);
+	var.BTOp = appVar_keyBTOp_t::sup;
+	uiMenu.keyOp(&var.BTOp);
 	uiMenu.printDisp();
 	func_updateMenuDisp(&uiDisp.dispBuf);
 }
 void Coding_Framework::on_KEY_DN_clicked(void)
 {
-	var.data.key.BTOp = appVar_keyBTOp_t::sdn;
-	uiMenu.keyOp(&var.data.key.BTOp);
+	var.BTOp = appVar_keyBTOp_t::sdn;
+	uiMenu.keyOp(&var.BTOp);
 	uiMenu.printDisp();
 	func_updateMenuDisp(&uiDisp.dispBuf);
 }
 void Coding_Framework::on_KEY_LF_clicked(void)
 {
-	var.data.key.BTOp = appVar_keyBTOp_t::slf;
-	uiMenu.keyOp(&var.data.key.BTOp);
+	var.BTOp = appVar_keyBTOp_t::slf;
+	uiMenu.keyOp(&var.BTOp);
 	uiMenu.printDisp();
 	func_updateMenuDisp(&uiDisp.dispBuf);
 }
 void Coding_Framework::on_KEY_RT_clicked(void)
 {
-	var.data.key.BTOp = appVar_keyBTOp_t::srt;
-	uiMenu.keyOp(&var.data.key.BTOp);
+	var.BTOp = appVar_keyBTOp_t::srt;
+	uiMenu.keyOp(&var.BTOp);
 	uiMenu.printDisp();
 	func_updateMenuDisp(&uiDisp.dispBuf);
 }
 void Coding_Framework::on_KEY_OK_clicked(void)
 {
-	var.data.key.BTOp = appVar_keyBTOp_t::sok;
-	uiMenu.keyOp(&var.data.key.BTOp);
+	var.BTOp = appVar_keyBTOp_t::sok;
+	uiMenu.keyOp(&var.BTOp);
 	uiMenu.printDisp();
 	func_updateMenuDisp(&uiDisp.dispBuf);
 }
 
 void Coding_Framework::on_KEY_LUP_clicked(void)
 {
-	var.data.key.BTOp = appVar_keyBTOp_t::lup;
-	uiMenu.keyOp(&var.data.key.BTOp);
+	var.BTOp = appVar_keyBTOp_t::lup;
+	uiMenu.keyOp(&var.BTOp);
 	uiMenu.printDisp();
 	func_updateMenuDisp(&uiDisp.dispBuf);
 }
 void Coding_Framework::on_KEY_LDN_clicked(void)
 {
-	var.data.key.BTOp = appVar_keyBTOp_t::ldn;
-	uiMenu.keyOp(&var.data.key.BTOp);
+	var.BTOp = appVar_keyBTOp_t::ldn;
+	uiMenu.keyOp(&var.BTOp);
 	uiMenu.printDisp();
 	func_updateMenuDisp(&uiDisp.dispBuf);
 }
 void Coding_Framework::on_KEY_LLF_clicked(void)
 {
-	var.data.key.BTOp = appVar_keyBTOp_t::llf;
-	uiMenu.keyOp(&var.data.key.BTOp);
+	var.BTOp = appVar_keyBTOp_t::llf;
+	uiMenu.keyOp(&var.BTOp);
 	uiMenu.printDisp();
 	func_updateMenuDisp(&uiDisp.dispBuf);
 }
 void Coding_Framework::on_KEY_LRT_clicked(void)
 {
-	var.data.key.BTOp = appVar_keyBTOp_t::lrt;
-	uiMenu.keyOp(&var.data.key.BTOp);
+	var.BTOp = appVar_keyBTOp_t::lrt;
+	uiMenu.keyOp(&var.BTOp);
 	uiMenu.printDisp();
 	func_updateMenuDisp(&uiDisp.dispBuf);
 }
 void Coding_Framework::on_KEY_LOK_clicked(void)
 {
-	var.data.key.BTOp = appVar_keyBTOp_t::lok;
-	uiMenu.keyOp(&var.data.key.BTOp);
+	var.BTOp = appVar_keyBTOp_t::lok;
+	uiMenu.keyOp(&var.BTOp);
 	uiMenu.printDisp();
 	func_updateMenuDisp(&uiDisp.dispBuf);
 }
