@@ -12,6 +12,15 @@
 */
 #define INC_USING_FREERTOS		0U
 
+#if defined(_OPENCV_DBG_) && _OPENCV_DBG_
+//TODO: Fix this.
+#define kStatus_Success 0
+#define kStatus_Fail 1
+
+typedef int status_t;
+
+#endif
+
 /*
 ----------Global Varible Type Definitions----------
 */

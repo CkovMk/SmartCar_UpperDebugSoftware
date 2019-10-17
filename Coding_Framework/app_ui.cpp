@@ -631,6 +631,7 @@ void appui_menu_t::menuItem_variType_t::keyOp(appVar_keyBTOp_t * _op)
 		break;
 	case appVar_keyBTOp_t::llf:
 		cur = 3;
+		break;
 	case appVar_keyBTOp_t::lrt:
 		cur = -1;
 		break;
@@ -839,6 +840,7 @@ void appui_menu_t::menuItem_varfType_t::keyOp(appVar_keyBTOp_t* _op)
 		break;
 	case appVar_keyBTOp_t::llf:
 		cur = 3;
+		break;
 	case appVar_keyBTOp_t::lrt:
 		cur = -1;
 		break;

@@ -49,6 +49,7 @@ public:
 
 	std::thread menuDispUpdate;
 
+
 public slots:
 
 	void on_KEY_UP_clicked(void);
@@ -62,6 +63,11 @@ public slots:
 	void on_KEY_LLF_clicked(void);
 	void on_KEY_LRT_clicked(void);
 	void on_KEY_LOK_clicked(void);
+
+
+protected:
+	virtual void keyPressEvent(QKeyEvent* ev);
+	virtual void keyReleaseEvent(QKeyEvent* ev);
 	
 private:
 	// Default Code
@@ -69,4 +75,12 @@ private:
 
 	
 	
+};
+
+
+class key_status_t
+{
+public:
+	uint32_t keyCnt;
+
 };

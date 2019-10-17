@@ -78,6 +78,20 @@ private:
 
 };
 
+class appui_dataNvmIfce_t
+{
+public:
+	appui_dataNvmIfce_t(void){}
+	virtual ~appui_dataNvmIfce_t(void){}
+	
+//	virtual uint32_t getSize(void) = 0;
+//	virtual uint32_t setSize(uint32_t _size) = 0;
+	virtual status_t read(uint32_t _addr, uint32_t _cnt, void* _buf) = 0;
+	virtual status_t save(uint32_t _addr, uint32_t _cnt, void* _buf) = 0;
+
+private:
+//	uint32_t size;
+};
 
 class appui_dataIO_t
 {
