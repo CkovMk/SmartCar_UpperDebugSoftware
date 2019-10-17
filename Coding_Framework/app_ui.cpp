@@ -578,6 +578,7 @@ void appui_menu_t::menuItem_variType_t::directKeyOp(appVar_keyBTOp_t * _op)
 		break;
 	case appVar_keyBTOp_t::slf:
 	case appVar_keyBTOp_t::llf:
+	case appVar_keyBTOp_t::rlf:
 	{
 		getContent(v, e, *data);
 		setContent(*data, v + 100, e);
@@ -585,6 +586,7 @@ void appui_menu_t::menuItem_variType_t::directKeyOp(appVar_keyBTOp_t * _op)
 	}
 	case appVar_keyBTOp_t::srt:
 	case appVar_keyBTOp_t::lrt:
+	case appVar_keyBTOp_t::rrt:
 	{
 		getContent(v, e, *data);
 		setContent(*data, v - 100, e);
@@ -787,6 +789,7 @@ void appui_menu_t::menuItem_varfType_t::directKeyOp(appVar_keyBTOp_t* _op)
 		break;
 	case appVar_keyBTOp_t::slf:
 	case appVar_keyBTOp_t::llf:
+	case appVar_keyBTOp_t::rlf:
 	{
 		getContent(v, e, *data);
 		setContent(*data, v + 100, e);
@@ -794,6 +797,7 @@ void appui_menu_t::menuItem_varfType_t::directKeyOp(appVar_keyBTOp_t* _op)
 	}
 	case appVar_keyBTOp_t::srt:
 	case appVar_keyBTOp_t::lrt:
+	case appVar_keyBTOp_t::rrt:
 	{
 		getContent(v, e, *data);
 		setContent(*data, v - 100, e);
