@@ -16,6 +16,8 @@
 #include <windows.h>
 #endif
 
+#define CONTROLL_MENU_USE_SCREEN_BUTTONS 1
+
 
 void menuDispUpdateHandler(void);
 
@@ -52,6 +54,7 @@ public:
 
 public slots:
 
+#if defined(CONTROLL_MENU_USE_SCREEN_BUTTONS) && (CONTROLL_MENU_USE_SCREEN_BUTTONS == 1)
 	void on_KEY_UP_clicked(void);
 	void on_KEY_DN_clicked(void);
 	void on_KEY_LF_clicked(void);
@@ -63,6 +66,8 @@ public slots:
 	void on_KEY_LLF_clicked(void);
 	void on_KEY_LRT_clicked(void);
 	void on_KEY_LOK_clicked(void);
+#endif
+	void on_MainTab_currentChanged(int tab);
 
 
 protected:

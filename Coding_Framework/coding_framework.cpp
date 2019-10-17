@@ -25,8 +25,8 @@ Coding_Framework::Coding_Framework(QWidget *parent)
 			a.pix[i][j] = b.pix[i][j] = c.pix[i][j] = gnc_rgb_t(0, 200, 200);
 		}
 	}
-
-	grabKeyboard();
+	if (ui.MainTab->currentIndex() == 1){grabKeyboard();}
+	
 	//c.pix[10][10] = gnc_makeRGB(200, 150, 100);
 
 	//func_updateImageDisp(&a);
@@ -72,6 +72,8 @@ void Coding_Framework::func_updateImageIptDisp(gnc_rgbIptImg_t* _buf)
 	imageIptDispLabel->resize(QSize(ui.imageIptDisp->width(), ui.imageIptDisp->height()));
 	ui.imageIptDisp->setWidget(imageIptDispLabel);
 }
+
+#if defined(CONTROLL_MENU_USE_SCREEN_BUTTONS) && (CONTROLL_MENU_USE_SCREEN_BUTTONS == 1)
 
 void Coding_Framework::on_KEY_UP_clicked(void)
 {
@@ -145,6 +147,20 @@ void Coding_Framework::on_KEY_LOK_clicked(void)
 	func_updateMenuDisp(&uiDisp.dispBuf);
 }
 
+#endif
+
+void Coding_Framework::on_MainTab_currentChanged(int tab)
+{
+	if (tab == 1)
+	{
+		grabKeyboard();
+	}
+	else
+	{
+		releaseKeyboard();
+	}
+}
+
 /*
 Qt::Key_Left
 Qt::Key_Up
@@ -157,178 +173,183 @@ volatile uint32_t cnt_keyUp = 0, cnt_keyDn = 0, cnt_keyLf = 0, cnt_keyRt = 0, cn
 
 void Coding_Framework::keyPressEvent(QKeyEvent* ev)
 {
-	switch (ev->key())
+	if (ui.MainTab->currentIndex() == 1)
 	{
-	case Qt::Key_Up:
-		if (ev->isAutoRepeat())
+		switch (ev->key())
 		{
-			//long,send
-			if (cnt_keyUp == 0)
+		case Qt::Key_Up:
+			if (ev->isAutoRepeat())
 			{
-				var.BTOp = appVar_keyBTOp_t::lup;
+				//long,send
+				if (cnt_keyUp == 0)
+				{
+					var.BTOp = appVar_keyBTOp_t::lup;
+				}
+				else
+				{
+					var.BTOp = appVar_keyBTOp_t::rup;
+				}
+				++cnt_keyUp;
+				break;
 			}
 			else
 			{
-				var.BTOp = appVar_keyBTOp_t::rup;
+				//shrt,do nothing
+				cnt_keyUp = 0;
+				return;
 			}
-			++cnt_keyUp;
-			break;
-		}
-		else
-		{
-			//shrt,do nothing
-			cnt_keyUp = 0;
-			return;
-		}
-	case Qt::Key_Down:
-		if (ev->isAutoRepeat())
-		{
-			//long,send
-			if (cnt_keyDn == 0)
+		case Qt::Key_Down:
+			if (ev->isAutoRepeat())
 			{
-				var.BTOp = appVar_keyBTOp_t::ldn;
+				//long,send
+				if (cnt_keyDn == 0)
+				{
+					var.BTOp = appVar_keyBTOp_t::ldn;
+				}
+				else
+				{
+					var.BTOp = appVar_keyBTOp_t::rdn;
+				}
+				++cnt_keyDn;
+				break;
 			}
 			else
 			{
-				var.BTOp = appVar_keyBTOp_t::rdn;
+				//shrt,do nothing
+				cnt_keyDn = 0;
+				return;
 			}
-			++cnt_keyDn;
-			break;
-		}
-		else
-		{
-			//shrt,do nothing
-			cnt_keyDn = 0;
-			return;
-		}
-	case Qt::Key_Left:
-		if (ev->isAutoRepeat())
-		{
-			//long,send
-			if (cnt_keyLf == 0)
+		case Qt::Key_Left:
+			if (ev->isAutoRepeat())
 			{
-				var.BTOp = appVar_keyBTOp_t::llf;
+				//long,send
+				if (cnt_keyLf == 0)
+				{
+					var.BTOp = appVar_keyBTOp_t::llf;
+				}
+				else
+				{
+					var.BTOp = appVar_keyBTOp_t::rlf;
+				}
+				++cnt_keyLf;
+				break;
 			}
 			else
 			{
-				var.BTOp = appVar_keyBTOp_t::rlf;
+				//shrt,do nothing
+				cnt_keyLf = 0;
+				return;
 			}
-			++cnt_keyLf;
-			break;
-		}
-		else
-		{
-			//shrt,do nothing
-			cnt_keyLf = 0;
-			return;
-		}
-	case Qt::Key_Right:
-		if (ev->isAutoRepeat())
-		{
-			//long,send
-			if (cnt_keyRt == 0)
+		case Qt::Key_Right:
+			if (ev->isAutoRepeat())
 			{
-				var.BTOp = appVar_keyBTOp_t::lrt;
+				//long,send
+				if (cnt_keyRt == 0)
+				{
+					var.BTOp = appVar_keyBTOp_t::lrt;
+				}
+				else
+				{
+					var.BTOp = appVar_keyBTOp_t::rrt;
+				}
+				++cnt_keyRt;
+				break;
 			}
 			else
 			{
-				var.BTOp = appVar_keyBTOp_t::rrt;
+				//shrt,do nothing
+				cnt_keyRt = 0;
+				return;
 			}
-			++cnt_keyRt;
-			break;
-		}
-		else
-		{
-			//shrt,do nothing
-			cnt_keyRt = 0;
-			return;
-		}
-	case Qt::Key_Space:
-		if (ev->isAutoRepeat())
-		{
-			//long,send
-			if (cnt_keyOk == 0)
+		case Qt::Key_Space:
+			if (ev->isAutoRepeat())
 			{
-				var.BTOp = appVar_keyBTOp_t::lok;
+				//long,send
+				if (cnt_keyOk == 0)
+				{
+					var.BTOp = appVar_keyBTOp_t::lok;
+				}
+				else
+				{
+					var.BTOp = appVar_keyBTOp_t::rok;
+				}
+				++cnt_keyOk;
+				break;
 			}
 			else
 			{
-				var.BTOp = appVar_keyBTOp_t::rok;
+				//shrt,do nothing
+				cnt_keyOk = 0;
+				return;
 			}
-			++cnt_keyOk;
-			break;
-		}
-		else
-		{
-			//shrt,do nothing
-			cnt_keyOk = 0;
+		default:
+			QWidget::keyPressEvent(ev);
 			return;
 		}
-	default:
-		QWidget::keyPressEvent(ev);
-		return;
+
+		uiMenu.keyOp(&var.BTOp);
+		uiMenu.printDisp();
+		func_updateMenuDisp(&uiDisp.dispBuf);
+
 	}
-
-	uiMenu.keyOp(&var.BTOp);
-	uiMenu.printDisp();
-	func_updateMenuDisp(&uiDisp.dispBuf);
-
-	
 }
 
 void Coding_Framework::keyReleaseEvent(QKeyEvent* ev)
 {
-	switch (ev->key())
+	if (ui.MainTab->currentIndex() == 1)
 	{
-	case Qt::Key_Up:
-		if (!ev->isAutoRepeat() && cnt_keyUp == 0)
+		switch (ev->key())
 		{
-			//shrt,send
-			var.BTOp = appVar_keyBTOp_t::sup;
-			break;
-		}
-		return;
-	case Qt::Key_Down:
-		if (!ev->isAutoRepeat() && cnt_keyDn == 0)
-		{
-			//shrt,send
-			var.BTOp = appVar_keyBTOp_t::sdn;
-			break;
-		}
-		return;
-	case Qt::Key_Left:
-		if (!ev->isAutoRepeat() && cnt_keyLf == 0)
-		{
-			//shrt,send
-			var.BTOp = appVar_keyBTOp_t::slf;
-			break;
-		}
-		return;
-	case Qt::Key_Right:
-		if (!ev->isAutoRepeat() && cnt_keyRt == 0)
-		{
-			//shrt,send
-			var.BTOp = appVar_keyBTOp_t::srt;
-			break;
-		}
-		return;
-	case Qt::Key_Space:
-		if (!ev->isAutoRepeat() && cnt_keyOk == 0)
-		{
-			//shrt,send
-			var.BTOp = appVar_keyBTOp_t::sok;
-			break;
-		}
-		return;
+		case Qt::Key_Up:
+			if (!ev->isAutoRepeat() && cnt_keyUp == 0)
+			{
+				//shrt,send
+				var.BTOp = appVar_keyBTOp_t::sup;
+				break;
+			}
+			return;
+		case Qt::Key_Down:
+			if (!ev->isAutoRepeat() && cnt_keyDn == 0)
+			{
+				//shrt,send
+				var.BTOp = appVar_keyBTOp_t::sdn;
+				break;
+			}
+			return;
+		case Qt::Key_Left:
+			if (!ev->isAutoRepeat() && cnt_keyLf == 0)
+			{
+				//shrt,send
+				var.BTOp = appVar_keyBTOp_t::slf;
+				break;
+			}
+			return;
+		case Qt::Key_Right:
+			if (!ev->isAutoRepeat() && cnt_keyRt == 0)
+			{
+				//shrt,send
+				var.BTOp = appVar_keyBTOp_t::srt;
+				break;
+			}
+			return;
+		case Qt::Key_Space:
+			if (!ev->isAutoRepeat() && cnt_keyOk == 0)
+			{
+				//shrt,send
+				var.BTOp = appVar_keyBTOp_t::sok;
+				break;
+			}
+			return;
 
-	default:
-		QWidget::keyPressEvent(ev);
-		return;
+		default:
+			QWidget::keyPressEvent(ev);
+			return;
+		}
+
+		uiMenu.keyOp(&var.BTOp);
+		uiMenu.printDisp();
+		func_updateMenuDisp(&uiDisp.dispBuf);
 	}
-
-	uiMenu.keyOp(&var.BTOp);
-	uiMenu.printDisp();
-	func_updateMenuDisp(&uiDisp.dispBuf);
 }
 
 
